@@ -1,0 +1,69 @@
+"#leftMenu": {
+	top: "0dp",
+	left: "0dp",
+	width: "250dp",
+	zIndex: "2",
+	backgroundColor : "#FFF"
+},
+"#rightMenu": {
+	top: "0dp",
+	right: "0dp",
+	width: "250dp",
+	zIndex: "1",
+	backgroundColor : "#FFF"
+},
+"#navview": {
+	top: "0dp",
+	left: "0dp",
+	width : Ti.Platform.displayCaps.platformWidth,
+	height : "44dp",
+	backgroundImage : '/images/NavBG.png'
+},
+"#movableview": {
+	left: "0",
+	zIndex: "3",
+	width : Ti.Platform.displayCaps.platformWidth
+},
+"#contentview": {
+	left : "0dp",
+	width : Ti.Platform.displayCaps.platformWidth,
+	height : Ti.UI.Fill,
+	top : "44",
+	backgroundColor : 'white'
+},
+"#shadowview": {
+	shadowColor:"black",
+    shadowOffset:{x:"0",y:"0"},
+    shadowRadius:"2.5"
+},
+"#leftButton": {
+	backgroundImage : 'none',
+	image : "/images/ButtonMenu.png",
+	left : "0",
+	top : "0",
+	width : "60dp",
+	height : "44dp",
+	backgroundColor: "pink"
+},
+"#rightButton": {
+	backgroundImage : 'none',
+	image : "/images/ButtonMenu.png",
+	right : "0",
+	top : "0",
+	width : "60",
+	height : "44",
+	style : "none"
+},
+"#heading": {
+	color: '#eeeeee',
+	font: {
+		fontSize: "16dp",
+		fontWeight: "bold"
+	}
+},
+"#subHeading": {
+	color: '#eeeeee',
+	font: {
+		fontSize: "10dp"
+	}
+}

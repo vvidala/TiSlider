@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10000.001,"key":"container","style":{backgroundColor:"white",top:"0",navBarHidden:false,hideTabBar:true,barImage:"/images/NavBG.png",width:Ti.Platform.displayCaps.platformWidth,}}];

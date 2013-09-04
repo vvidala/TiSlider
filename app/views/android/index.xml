@@ -1,0 +1,23 @@
+<Alloy>
+	<Window class="container" navBarHidden="true">
+		<View id="containerview">
+			<View id="leftMenu">
+				<TableView id="menu">
+					<TableViewRow title="Map"></TableViewRow>
+					<TableViewRow title="My Apartments"></TableViewRow>
+					<TableViewRow title="About"></TableViewRow>
+					<TableViewRow title="My Lists"></TableViewRow>
+					<TableViewRow title="row1"></TableViewRow>
+				</TableView>
+			</View>
+			<View id="movableview">
+				<View id="navview">
+					<Button id="leftButton" />
+				</View>
+				<View id="contentview" >
+					<Label id="lab"> nothing</Label>
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

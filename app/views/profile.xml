@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" fullscreen="false">
+		<Label> This is the profile page</Label>>
+	</Window>
+</Alloy>
