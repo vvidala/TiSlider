@@ -1,5 +1,6 @@
 <Alloy>
 	<Window class="container" fullscreen="false">
-		<Label> This is the profile page</Label>>
+		<RightNavButton><Button>Hi</Button></RightNavButton>
+		<Label platform="android"> This is the profile page</Label>>
 	</Window>
 </Alloy>

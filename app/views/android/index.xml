@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" navBarHidden="true">
+	<Window class="container" navBarHidden="true" exitOnClose="true">
 		<View id="containerview">
 			<View id="leftMenu">
 				<TableView id="menu">
@@ -11,12 +11,8 @@
 				</TableView>
 			</View>
 			<View id="movableview">
-				<View id="navview">
-					<Button id="leftButton" />
-				</View>
-				<View id="contentview" >
-					<Label id="lab"> nothing</Label>
-				</View>
+				<Require type="view" id="navview" src="navbar"></Require>
+				<Require type="view" id="contentview" src="mapview"></Require>
 			</View>
 		</View>
 	</Window>

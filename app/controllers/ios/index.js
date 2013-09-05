@@ -24,37 +24,36 @@ var buttonPressed = false;
 var hasSlided = false;
 var direction = "reset";
 
+function toggleSlider(){
+	if (!hasSlided) {
+		direction = "right";
+		$.index.animate(animateRight);
+		hasSlided = true;
+	} 
+	else {
+		direction = "reset";
+		$.index.animate(animateReset);
+		hasSlided = false;
+	}
+}
 
-$.leftButton.addEventListener('click', function(e){
-	    if (!hasSlided) {
-			direction = "right";
-			$.leftButton.touchEnabled = false;
-			$.index.animate(animateRight);
-			hasSlided = true;
-		} else {
-			direction = "reset";
-			$.leftButton.touchEnabled = true;
-			$.index.animate(animateReset);
-			hasSlided = false;
-		} 
-	});
+Ti.App.addEventListener("slider:toggle", function(e){
+ 	toggleSlider();
+});
 
 $.sideScreen.open();
 $.index.open();
 
 $.menu.addEventListener('click', function(e) {
-	Ti.API.info(JSON.stringify(e));
-	if(e.row.title== "My Apartments"){
-		$.index.setActiveTab($.myAptsTab);
+	if(typeof e.row.target !== "undefined"){
+		$.index.setActiveTab(eval("$."+e.row.target));
 	}
 	
-	direction = "reset";
-	$.leftButton.touchEnabled = true;
-	$.index.animate(animateReset);
-	hasSlided = false;
+	toggleSlider();
 });
 
-$.lab.addEventListener('click', function(){
+Ti.App.addEventListener("nav:openwin", function(e){
+	Ti.API.info("open win Received");
 	var win = Alloy.createController("profile").getView();
 	$.index.activeTab.open(win);
 });

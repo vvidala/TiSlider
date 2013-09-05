@@ -1,0 +1,8 @@
+<Alloy>
+	<Window title="Tab 1"tabBarHidden="true" class="container">
+		<LeftNavButton>
+        	<Button id="leftButton"/>
+		</LeftNavButton>
+		<Label id="lab">I am Window 1</Label>
+	</Window>
+</Alloy>

@@ -23,33 +23,37 @@ var buttonPressed = false;
 var hasSlided = false;
 var direction = "reset";
 
-$.leftButton.addEventListener('click', function() {
+function toggleSlider() {
 	if (!hasSlided) {
 		//alert("opening");
 		direction = "right";
-		//$.leftButton.touchEnabled = false;
 		$.movableview.animate(animateRight);
 		hasSlided = true;
 	} else {
 		//alert("closing");
 		direction = "reset";
-		$.leftButton.touchEnabled = true;
 		$.movableview.animate(animateReset);
 		hasSlided = false;
-		//$.movableview.left = 0;
 	}
+}
+
+Ti.App.addEventListener('slider:toggle', function(e) {
+	toggleSlider();
 });
 
 $.index.open();
 
 $.menu.addEventListener('click', function(e) {
-	direction = "reset";
-	$.leftButton.touchEnabled = true;
-	$.index.animate(animateReset);
-	hasSlided = false;
+	Ti.API.info(JSON.stringify(e));
+	if(e.row.title== "My Apartments"){
+		$.contentview.children = [];
+		var view = Alloy.createController("myapartments").getView();
+		$.contentview.add(view);
+	}
+	toggleSlider();
 });
 
-$.lab.addEventListener('click', function(){
-	var win = Alloy.createController('profile').getView();
+Ti.App.addEventListener('nav:openwin', function(e){
+	var win = Alloy.createController(e).getView();
 	win.open();
 });

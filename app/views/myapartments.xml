@@ -1,0 +1,10 @@
+<Alloy>
+	<Window title="My Apartments" tabBarHidden="true" class="container">
+		<LeftNavButton platform="ios">
+        	<Button id="leftButton" class="leftButton"/>
+		</LeftNavButton>
+		<View class="container" fullscreen="false">
+			<Label > My Apartments</Label>>
+		</View>>
+	</Window>
+</Alloy>

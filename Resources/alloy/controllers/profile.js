@@ -13,15 +13,16 @@ function Controller() {
         hideTabBar: true,
         barImage: "/images/NavBG.png",
         width: Ti.Platform.displayCaps.platformWidth,
+        backButtonTitleImage: "/images/ButtonMenu.png",
         fullscreen: "false",
         id: "profile"
     });
     $.__views.profile && $.addTopLevelView($.__views.profile);
-    $.__views.__alloyId10 = Ti.UI.createLabel({
-        text: "This is the profile page",
-        id: "__alloyId10"
+    $.__views.__alloyId15 = Ti.UI.createButton({
+        title: "Hi",
+        id: "__alloyId15"
     });
-    $.__views.profile.add($.__views.__alloyId10);
+    $.__views.profile.rightNavButton = $.__views.__alloyId15;
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

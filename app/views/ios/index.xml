@@ -1,29 +1,19 @@
 <Alloy>
 	<Window id="sideScreen">
 		<TableView id="menu">
-			<TableViewRow title="Map"></TableViewRow>
-			<TableViewRow title="My Apartments"></TableViewRow>
+			<TableViewRow target="mapview" title="Map"></TableViewRow>
+			<TableViewRow target="myapartments" title="My Apartments"></TableViewRow>
 			<TableViewRow title="About"></TableViewRow>
 			<TableViewRow title="My Lists"></TableViewRow>
 			<TableViewRow title="row1"></TableViewRow>
 		</TableView>
 	</Window>
 	<TabGroup id="index" width="Ti.Platform.displayCaps.platformWidth">
-		<Tab title="Tab 1">
-			<Window title="Tab 1" class="container">
-				<LeftNavButton>
-		        	<Button id="leftButton"/>
-				</LeftNavButton>
-				<Label id="lab">I am Window 1</Label>
-			</Window>
+		<Tab title="Tab 1" id="mapview">
+			<Require type="view" src="mapview"></Require>
 		</Tab>
-		<Tab title="Tab 2" id="myAptsTab">
-			<Window title="Tab 2" class="container">
-				<LeftNavButton>
-		        	<Button id="leftButton"/>
-				</LeftNavButton>
-				<Label id="lab">I am the My Favs window</Label>
-			</Window>
+		<Tab title="Tab 2" id="myapartments">
+			<Require type="view" src="myapartments"></Require>
 		</Tab>
 	</TabGroup>
 </Alloy>

@@ -1,0 +1,16 @@
+".container": {
+	backgroundColor: "white",	
+	top: "0",
+	navBarHidden: false,
+	hideTabBar: true,
+	barImage: "/images/NavBG.png",
+	width : Ti.Platform.displayCaps.platformWidth
+},
+".leftButton": {
+	backgroundImage : 'none',
+	image : "/images/ButtonMenu.png",
+	top : "0",
+	width : "60",
+	height : "44",
+	style : "none"
+}

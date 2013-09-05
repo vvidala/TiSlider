@@ -1,0 +1,25 @@
+"#navview": {
+	top: "0dp",
+	left: "0dp",
+	width : "100%",
+	height : "44dp",
+	backgroundImage : '/images/NavBG.png'
+},
+"#leftButton": {
+	backgroundImage : 'none',
+	image : "/images/ButtonMenu.png",
+	left : "0",
+	top : "0",
+	width : "60dp",
+	height : "44dp",
+	backgroundColor: "transparent"
+},
+"#rightButton": {
+	backgroundImage : 'none',
+	image : "/images/ButtonMenu.png",
+	right : "0",
+	top : "0",
+	width : "60",
+	height : "44",
+	style : "none"
+}
