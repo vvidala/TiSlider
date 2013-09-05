@@ -71,4 +71,8 @@ $.index.addEventListener("android:back", function(e){
 		$.contentview.remove(windows[windows.length - 1]);
 		windows.pop();
 	}
+	else{
+		/* Either close window or have a custom logic to 
+		 * goto the main view and then exit the app */ 
+	}
 });
