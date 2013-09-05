@@ -42,18 +42,33 @@ Ti.App.addEventListener('slider:toggle', function(e) {
 });
 
 $.index.open();
+var windows = [];
+windows.push($.contentview.children[0]);
 
 $.menu.addEventListener('click', function(e) {
 	Ti.API.info(JSON.stringify(e));
-	if(e.row.title== "My Apartments"){
-		$.contentview.children = [];
-		var view = Alloy.createController("myapartments").getView();
+	if(typeof e.row.target !== "undefined"){
+		windows.forEach(function(win){
+			$.contentview.remove(win);
+		});
+		windows = [];
+		//$.contentview.children = [];
+		var view = Alloy.createController(e.row.target).getView();
 		$.contentview.add(view);
+		windows.push(view);
 	}
 	toggleSlider();
 });
 
 Ti.App.addEventListener('nav:openwin', function(e){
 	var win = Alloy.createController('profile').getView();
-	win.open();
+	$.contentview.add(win);
+	windows.push(win);
+});
+
+$.index.addEventListener("android:back", function(e){
+	if(windows.length > 1) {
+		$.contentview.remove(windows[windows.length - 1]);
+		windows.pop();
+	}
 });

@@ -1,6 +1,7 @@
 ".container" : {
 	backgroundColor: "white",	
 	top: "0",
+	zIndex: 5,
 	navBarHidden: false,
 	hideTabBar: true,
 	barImage: "/images/NavBG.png",

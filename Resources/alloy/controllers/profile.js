@@ -9,6 +9,7 @@ function Controller() {
     $.__views.profile = Ti.UI.createWindow({
         backgroundColor: "white",
         top: "0",
+        zIndex: 5,
         navBarHidden: false,
         hideTabBar: true,
         barImage: "/images/NavBG.png",
@@ -19,11 +20,16 @@ function Controller() {
         id: "profile"
     });
     $.__views.profile && $.addTopLevelView($.__views.profile);
-    $.__views.__alloyId15 = Ti.UI.createButton({
+    $.__views.__alloyId13 = Ti.UI.createButton({
         title: "Hi",
-        id: "__alloyId15"
+        id: "__alloyId13"
     });
-    $.__views.profile.rightNavButton = $.__views.__alloyId15;
+    $.__views.profile.rightNavButton = $.__views.__alloyId13;
+    $.__views.__alloyId14 = Ti.UI.createLabel({
+        text: "This is the profile page",
+        id: "__alloyId14"
+    });
+    $.__views.profile.add($.__views.__alloyId14);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

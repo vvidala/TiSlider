@@ -3,8 +3,8 @@
 		<View id="containerview">
 			<View id="leftMenu">
 				<TableView id="menu">
-					<TableViewRow title="Map"></TableViewRow>
-					<TableViewRow title="My Apartments"></TableViewRow>
+					<TableViewRow target="mapview" title="Map"></TableViewRow>
+					<TableViewRow target="myapartments" title="My Apartments"></TableViewRow>
 					<TableViewRow title="About"></TableViewRow>
 					<TableViewRow title="My Lists"></TableViewRow>
 					<TableViewRow title="row1"></TableViewRow>
@@ -12,7 +12,9 @@
 			</View>
 			<View id="movableview">
 				<Require type="view" id="navview" src="navbar"></Require>
-				<Require type="view" id="contentview" src="mapview"></Require>
+				<View id="contentview">
+					<Require type="view" src="mapview"></Require>
+				</View>
 			</View>
 		</View>
 	</Window>
