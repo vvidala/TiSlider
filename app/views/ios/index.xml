@@ -1,12 +1,6 @@
 <Alloy>
 	<Window id="sideScreen">
-		<TableView id="menu">
-			<TableViewRow target="mapview" title="Map"></TableViewRow>
-			<TableViewRow target="myapartments" title="My Apartments"></TableViewRow>
-			<TableViewRow title="About"></TableViewRow>
-			<TableViewRow title="My Lists"></TableViewRow>
-			<TableViewRow title="row1"></TableViewRow>
-		</TableView>
+		<Require type="view" src="sidemenu"></Require>
 	</Window>
 	<TabGroup id="index" width="Ti.Platform.displayCaps.platformWidth">
 		<Tab title="Tab 1" id="mapview">

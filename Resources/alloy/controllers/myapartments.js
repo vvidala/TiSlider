@@ -12,30 +12,43 @@ function Controller() {
         navBarHidden: false,
         hideTabBar: true,
         barImage: "/images/NavBG.png",
-        width: Ti.Platform.displayCaps.platformWidth,
+        width: "100%",
         title: "My Apartments",
         tabBarHidden: "true",
         id: "myapartments"
     });
     $.__views.myapartments && $.addTopLevelView($.__views.myapartments);
-    $.__views.__alloyId10 = Ti.UI.createView({
+    $.__views.leftButton = Ti.UI.createButton({
+        backgroundImage: "none",
+        image: "/images/ButtonMenu.png",
+        top: "0",
+        width: "60",
+        height: "44",
+        style: "none",
+        id: "leftButton"
+    });
+    $.__views.myapartments.leftNavButton = $.__views.leftButton;
+    $.__views.__alloyId8 = Ti.UI.createView({
         backgroundColor: "white",
         top: "0",
         navBarHidden: false,
         hideTabBar: true,
         barImage: "/images/NavBG.png",
-        width: Ti.Platform.displayCaps.platformWidth,
+        width: "100%",
         fullscreen: "false",
-        id: "__alloyId10"
+        id: "__alloyId8"
     });
-    $.__views.myapartments.add($.__views.__alloyId10);
-    $.__views.__alloyId11 = Ti.UI.createLabel({
+    $.__views.myapartments.add($.__views.__alloyId8);
+    $.__views.__alloyId9 = Ti.UI.createLabel({
         text: "My Apartments",
-        id: "__alloyId11"
+        id: "__alloyId9"
     });
-    $.__views.__alloyId10.add($.__views.__alloyId11);
+    $.__views.__alloyId8.add($.__views.__alloyId9);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.leftButton.addEventListener("click", function(e) {
+        Ti.App.fireEvent("slider:toggle", e);
+    });
     _.extend($, exports);
 }
 

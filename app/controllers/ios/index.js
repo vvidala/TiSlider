@@ -37,19 +37,15 @@ function toggleSlider(){
 	}
 }
 
+$.sideScreen.open();
+$.index.open();
+
 Ti.App.addEventListener("slider:toggle", function(e){
  	toggleSlider();
 });
 
-$.sideScreen.open();
-$.index.open();
-
-$.menu.addEventListener('click', function(e) {
-	if(typeof e.row.target !== "undefined"){
-		$.index.setActiveTab(eval("$."+e.row.target));
-	}
-	
-	toggleSlider();
+Ti.App.addEventListener("nav:openbasewin", function(e){
+	$.index.setActiveTab(eval("$."+e.target));
 });
 
 Ti.App.addEventListener("nav:openwin", function(e){

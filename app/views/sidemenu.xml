@@ -1,0 +1,9 @@
+<Alloy>
+	<TableView id="menu">
+		<TableViewRow target="mapview" title="Map"></TableViewRow>
+		<TableViewRow target="myapartments" title="My Apartments"></TableViewRow>
+		<TableViewRow title="About"></TableViewRow>
+		<TableViewRow title="My Lists"></TableViewRow>
+		<TableViewRow title="row1"></TableViewRow>
+	</TableView>
+</Alloy>

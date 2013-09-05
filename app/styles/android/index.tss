@@ -5,13 +5,6 @@
 	zIndex: "2",
 	backgroundColor : "#FFF"
 },
-"#rightMenu": {
-	top: "0dp",
-	right: "0dp",
-	width: "250dp",
-	zIndex: "1",
-	backgroundColor : "#FFF"
-},
 "#movableview": {
 	left: "0",
 	zIndex: "3",

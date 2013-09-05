@@ -15,10 +15,12 @@
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
     <guid>29aecaf6-bafc-4a23-a176-6934f7d8a7c2</guid>
-    <property name="ti.ui.defaultunit" type="string">system</property>
+    <property name="ti.ui.defaultunit">dp</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
         <orientations device="ipad">
             <orientation>Ti.UI.PORTRAIT</orientation>
@@ -29,7 +31,6 @@
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
     	<manifest>
-    		<supports-screens android:anyDensity="false"/>
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>

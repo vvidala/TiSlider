@@ -12,7 +12,7 @@ function Controller() {
         navBarHidden: false,
         hideTabBar: true,
         barImage: "/images/NavBG.png",
-        width: Ti.Platform.displayCaps.platformWidth,
+        width: "100%",
         title: "Map View",
         tabBarHidden: "true",
         id: "mapview"
@@ -28,6 +28,15 @@ function Controller() {
         id: "leftButton"
     });
     $.__views.mapview.leftNavButton = $.__views.leftButton;
+    var __alloyId6 = [];
+    $.__views.view1 = Ti.Map.createView({
+        annotations: __alloyId6,
+        id: "view1",
+        ns: Ti.Map,
+        animate: "true",
+        mapType: Ti.Map.STANDARD_TYPE
+    });
+    $.__views.mapview.add($.__views.view1);
     $.__views.lab = Ti.UI.createLabel({
         text: "Map View",
         id: "lab"

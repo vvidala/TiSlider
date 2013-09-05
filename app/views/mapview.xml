@@ -3,6 +3,7 @@
 		<LeftNavButton>
         	<Button id="leftButton"/>
 		</LeftNavButton>
+		<View id="view1" ns="Ti.Map" animate="true" mapType="Ti.Map.STANDARD_TYPE" />
 		<Label id="lab">Map View</Label>
 	</Window>
 </Alloy>

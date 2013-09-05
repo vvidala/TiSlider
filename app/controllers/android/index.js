@@ -44,35 +44,35 @@ Ti.App.addEventListener('slider:toggle', function(e) {
 $.index.open();
 var windows = [];
 windows.push($.contentview.children[0]);
+function clearContents(){
+	windows.forEach(function(win){
+		$.contentview.remove(win);
+	});
+	windows = [];
+}
 
-$.menu.addEventListener('click', function(e) {
-	Ti.API.info(JSON.stringify(e));
-	if(typeof e.row.target !== "undefined"){
-		windows.forEach(function(win){
-			$.contentview.remove(win);
-		});
-		windows = [];
-		//$.contentview.children = [];
-		var view = Alloy.createController(e.row.target).getView();
-		$.contentview.add(view);
-		windows.push(view);
-	}
-	toggleSlider();
+function addContentView(view){
+	var view = Alloy.createController(view).getView();
+	$.contentview.add(view);
+	windows.push(view);
+}
+
+Ti.App.addEventListener("nav:openbasewin", function(e){
+		clearContents();
+		addContentView(e.target);
 });
 
 Ti.App.addEventListener('nav:openwin', function(e){
-	var win = Alloy.createController('profile').getView();
-	$.contentview.add(win);
-	windows.push(win);
+	addContentView(e.target);
 });
 
 $.index.addEventListener("android:back", function(e){
 	if(windows.length > 1) {
-		$.contentview.remove(windows[windows.length - 1]);
-		windows.pop();
+		$.contentview.remove(windows.pop());
 	}
 	else{
 		/* Either close window or have a custom logic to 
 		 * goto the main view and then exit the app */ 
+		$.index.close();
 	}
 });
