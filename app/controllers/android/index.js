@@ -54,6 +54,6 @@ $.menu.addEventListener('click', function(e) {
 });
 
 Ti.App.addEventListener('nav:openwin', function(e){
-	var win = Alloy.createController(e).getView();
+	var win = Alloy.createController('profile').getView();
 	win.open();
 });

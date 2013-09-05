@@ -114,9 +114,9 @@ function Controller() {
         "undefined" != typeof e.row.target && $.index.setActiveTab(eval("$." + e.row.target));
         toggleSlider();
     });
-    Ti.App.addEventListener("nav:openwin", function() {
-        Ti.API.info("open win Received");
-        var win = Alloy.createController("profile").getView();
+    Ti.App.addEventListener("nav:openwin", function(e) {
+        Ti.API.info(JSON.stringify(e));
+        var win = Alloy.createController(e.target).getView();
         $.index.activeTab.open(win);
     });
     _.extend($, exports);

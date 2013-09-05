@@ -53,7 +53,7 @@ $.menu.addEventListener('click', function(e) {
 });
 
 Ti.App.addEventListener("nav:openwin", function(e){
-	Ti.API.info("open win Received");
-	var win = Alloy.createController("profile").getView();
+	Ti.API.info(JSON.stringify(e));
+	var win = Alloy.createController(e.target).getView();
 	$.index.activeTab.open(win);
 });

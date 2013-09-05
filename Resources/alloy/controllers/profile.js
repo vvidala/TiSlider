@@ -15,6 +15,7 @@ function Controller() {
         width: Ti.Platform.displayCaps.platformWidth,
         backButtonTitleImage: "/images/ButtonMenu.png",
         fullscreen: "false",
+        title: "Profile Page",
         id: "profile"
     });
     $.__views.profile && $.addTopLevelView($.__views.profile);

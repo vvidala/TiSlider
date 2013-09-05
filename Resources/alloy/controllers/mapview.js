@@ -13,7 +13,7 @@ function Controller() {
         hideTabBar: true,
         barImage: "/images/NavBG.png",
         width: Ti.Platform.displayCaps.platformWidth,
-        title: "Tab 1",
+        title: "Map View",
         tabBarHidden: "true",
         id: "mapview"
     });
@@ -29,7 +29,7 @@ function Controller() {
     });
     $.__views.mapview.leftNavButton = $.__views.leftButton;
     $.__views.lab = Ti.UI.createLabel({
-        text: "I am Window 1",
+        text: "Map View",
         id: "lab"
     });
     $.__views.mapview.add($.__views.lab);
@@ -40,7 +40,9 @@ function Controller() {
     });
     $.lab.addEventListener("click", function() {
         Ti.API.info("open win fired");
-        Ti.App.fireEvent("nav:openwin", "profile");
+        Ti.App.fireEvent("nav:openwin", {
+            target: "profile"
+        });
     });
     _.extend($, exports);
 }
