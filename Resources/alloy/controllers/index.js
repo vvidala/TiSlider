@@ -28,13 +28,16 @@ function Controller() {
     });
     $.__views.__alloyId19.setParent($.__views.sideScreen);
     $.__views.index = Ti.UI.createTabGroup({
-        id: "index",
-        width: Ti.Platform.displayCaps.platformWidth
+        barImage: "/images/NavBG.png",
+        width: "100%",
+        id: "index"
     });
     $.__views.__alloyId20 = Alloy.createController("mapview", {
         id: "__alloyId20"
     });
     $.__views.mapview = Ti.UI.createTab({
+        barImage: "/images/NavBG.png",
+        width: "100%",
         window: $.__views.__alloyId20.getViewEx({
             recurse: true
         }),
@@ -46,6 +49,8 @@ function Controller() {
         id: "__alloyId22"
     });
     $.__views.myapartments = Ti.UI.createTab({
+        barImage: "/images/NavBG.png",
+        width: "100%",
         window: $.__views.__alloyId22.getViewEx({
             recurse: true
         }),
@@ -79,6 +84,9 @@ function Controller() {
     var direction = "reset";
     $.sideScreen.open();
     $.index.open();
+    Ti.Gesture.addEventListener("orientationchange", function() {
+        $.index.width = Ti.Platform.displayCaps.platformWidth;
+    });
     Ti.App.addEventListener("slider:toggle", function() {
         toggleSlider();
     });

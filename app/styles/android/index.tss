@@ -1,20 +1,15 @@
 "#leftMenu": {
 	top: "0dp",
-	left: "0dp",
+	left: "-250dp",
 	width: "250dp",
 	zIndex: "2",
 	backgroundColor : "#FFF"
-},
-"#movableview": {
-	left: "0",
-	zIndex: "3",
-	width : "100%"
 },
 "#contentview": {
 	left : "0dp",
 	width : "100%",
 	height : Ti.UI.Fill,
-	top : "44",
+	top : "0",
 	backgroundColor : 'white'
 },
 "#shadowview": {

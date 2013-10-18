@@ -2,7 +2,7 @@
 	<Window id="sideScreen">
 		<Require type="view" src="sidemenu"></Require>
 	</Window>
-	<TabGroup id="index" width="Ti.Platform.displayCaps.platformWidth">
+	<TabGroup id="index" width="100%">
 		<Tab title="Tab 1" id="mapview">
 			<Require type="view" src="mapview"></Require>
 		</Tab>

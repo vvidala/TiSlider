@@ -1,15 +1,15 @@
 <Alloy>
-	<Window class="container" navBarHidden="true" exitOnClose="true">
-		<View id="containerview">
-			<View id="leftMenu">
-				<Require type="view" src="sidemenu"></Require>
-			</View>
-			<View id="movableview">
-				<Require type="view" id="navview" src="navbar"></Require>
-				<View id="contentview">
-					<Require type="view" src="mapview"></Require>
-				</View>
-			</View>
+	<Window class="container" navBarHidden="false" exitOnClose="true" title="Crap"> 
+		<Menu id="menu" platform="android" backgroundImage='/images/NavBG.png'>
+            <MenuItem id="menuItem" title="Search"  showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+            <MenuItem id="menuItem" title="Refresh" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+            <MenuItem id="menuItem" title="Help" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER" />
+        </Menu>
+        <View id="leftMenu">
+			<Require type="view" src="sidemenu"></Require>
+		</View>
+		<View id="contentview">
+			<Require type="view" src="myapartments"></Require>
 		</View>
 	</Window>
 </Alloy>

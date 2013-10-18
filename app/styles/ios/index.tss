@@ -1,3 +1,11 @@
+"TabGroup" :{
+	barImage: "/images/NavBG.png",
+	width : "100%"
+},
+"Tab" :{
+	barImage: "/images/NavBG.png",
+	width : "100%"
+},
 ".container": {
 	backgroundColor: "white",	
 	top: "0",

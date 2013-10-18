@@ -40,6 +40,10 @@ function toggleSlider(){
 $.sideScreen.open();
 $.index.open();
 
+Ti.Gesture.addEventListener('orientationchange', function() {
+	$.index.width = Ti.Platform.displayCaps.platformWidth;
+});
+
 Ti.App.addEventListener("slider:toggle", function(e){
  	toggleSlider();
 });

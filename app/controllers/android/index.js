@@ -1,19 +1,13 @@
 var animateRight = Ti.UI.createAnimation({
-	left : 250,
+	left : 0,
 	curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
-	duration : 150
+	duration : 350
 });
 
 var animateReset = Ti.UI.createAnimation({
-	left : 0,
+	left : "-250dp",
 	curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
-	duration : 150
-});
-
-var animateLeft = Ti.UI.createAnimation({
-	left : -250,
-	curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
-	duration : 150
+	duration : 350
 });
 
 var touchStartX = 0;
@@ -27,23 +21,36 @@ function toggleSlider() {
 	if (!hasSlided) {
 		//alert("opening");
 		direction = "right";
-		$.movableview.animate(animateRight);
+		$.leftMenu.animate(animateRight);
 		hasSlided = true;
 	} else {
 		//alert("closing");
 		direction = "reset";
-		$.movableview.animate(animateReset);
+		$.leftMenu.animate(animateReset);
 		hasSlided = false;
 	}
 }
+
 
 Ti.App.addEventListener('slider:toggle', function(e) {
 	toggleSlider();
 });
 
+$.index.addEventListener('open', function(e) {
+    var activity = $.index.activity;
+ 
+    // Menu Item Specific Code
+    activity.onPrepareOptionsMenu = function(e) {
+    	activity.actionBar.title = "DemoApp";
+	 	activity.actionBar.onHomeIconItemSelected = function() {
+        	toggleSlider();
+        }; 
+    };  
+});
+
 $.index.open();
 var windows = [];
-windows.push($.contentview.children[0]);
+//windows.push($.contentview.children[0]);
 function clearContents(){
 	windows.forEach(function(win){
 		$.contentview.remove(win);
